@@ -16,7 +16,6 @@ all of my tests showed that ado.net is faster by > 20% than entity framework...
 
 so i gave up on the convenience using EF to gain speed
 
-
 but, if u ever used ADO.NET u know that the need to write all the Sql queries yourself
 
 can be annoying, for example stupid typo like 'INSERT INTO YABLE' instead of 'INSERT INTO TABLE'
@@ -25,4 +24,4 @@ each typo like that is time consuming and will cost a lot of man power in big pr
 
 so i wrapped all the INSERT, UPDATE DELETE ETC... into one box.
 
-removed the typos 
+removed the annoying part and gained my speed. 
