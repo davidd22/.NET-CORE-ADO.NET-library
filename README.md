@@ -25,3 +25,5 @@ each typo like that is time consuming and will cost a lot of man power in big pr
 so i wrapped all the INSERT, UPDATE DELETE ETC... into one box.
 
 removed the annoying part and gained my speed. 
+
+<h1>CODE EXAMPLES</h1>
