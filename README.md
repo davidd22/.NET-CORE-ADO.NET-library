@@ -27,3 +27,40 @@ so i wrapped all the INSERT, UPDATE DELETE ETC... into one box.
 removed the annoying part and gained my speed. 
 
 <h1>CODE EXAMPLES</h1>
+
+<h3>INSERT</h3>
+
+    CMySqlInsert cMySqlInsert = new CMySqlInsert([DB_CONNECTION_STRING]
+                                                        , [TABLE_NAME]
+                                                        , true -> true if u need the LastInsertedId
+                                                        , new Dictionary<string, object>()
+                                                        {
+                                                             { [TABLE_COLUMN_NAME_1], [COLUMN1_VALUE1]}
+                                                            ,{ [TABLE_COLUMN_NAME_2], [COLUMN1_VALUE2]}
+                                                            ,{ [TABLE_COLUMN_NAME_3], [COLUMN1_VALUE3]}
+                                                        }
+
+                                                        );
+
+            CDdlReturnValue result = await cMySqlInsert.ExecuteAsync();
+            
+            
+<h3>UPDATE</h3>
+
+     List<CCondition> updateWhereCondition
+                = new List<CCondition>() { new CCondition(COperatorCondition.AND, [COLUMN1_VALUE], 1, COperatorCondition.EQUAL)
+                                          ,new CCondition(COperatorCondition.AND, [COLUMN2_VALUE], 2, COperatorCondition.EQUAL) };
+
+            Dictionary<string, object> updateValues = new Dictionary<string, object>() {
+                { [TABLE_COLUMN_NAME_1],'HELLO'}
+              , { [TABLE_COLUMN_NAME_2],'WORLD'}
+            };
+
+            CMySqlUpdate cMySqlUpdate = new CMySqlUpdate([DB_CONNECTION_STRING]
+                                                        , [TABLE_NAME]
+                                                        , updateWhereCondition
+                                                        , updateValues
+                                                        , InvokeActionOnDbError
+                                                        );
+
+            CDdlReturnValue result = await cMySqlUpdate.ExecuteAsync();
